@@ -1,0 +1,12 @@
+- name: touch file
+  hosts: client1
+  become: yes
+  tasks:
+          - name: touch file1
+            file:
+                    name: "{{ item }}"
+                    state: touch
+            with_items:
+                    - file5
+                    - file6
+                    - file7
