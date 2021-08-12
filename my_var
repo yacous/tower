@@ -1,0 +1,6 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+   - name: show my_var
+     debug: var=my_var
