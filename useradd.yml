@@ -1,0 +1,10 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: useradd Robin
+      user:
+        name: Robin
+        state: present
+        register: command_result
+  
