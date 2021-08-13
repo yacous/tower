@@ -6,5 +6,5 @@
       user:
         name: Robin
         state: present
-        register: command_result
+      register: command_result
   
