@@ -3,6 +3,16 @@
 - hosts: all
   gather_facts: no
   tasks:
-      - name: check if Robin exists
-      #debug:
-        debug: var=command_result  
+    - user:
+        name: Robin
+        state: present
+      register: command_result
+    - name: check if Robin exists
+      debug:
+      #debug: var=command_result        
+        msg: "This user has been added or already exists !"
+      when:
+       - "'Robin' in command_result.name"
+       - "'present' in command_result.state"
+       - not command_result.changed
+
