@@ -1,0 +1,8 @@
+
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+      - name: check if Robin exists
+      #debug:
+        debug: var=command_result  
